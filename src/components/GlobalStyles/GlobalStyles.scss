@@ -1,7 +1,21 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 :root {
-    --primary-color: #fff;
+    // Color background
+    --white-color: #fff;
+    --black-color: #000;
+    --primary-color: #fe2c55;
+
+    // Default layout
+    --width-default-layout: 1528px;
+    --header-default-layout: 60px;
+    --search-height: 46px;
+    --search-right: 52px;
+    --search-top-spacer: 9px;
+
+    // Text color
+    --primary-text: rgb(22, 24, 35);
+    --text-color: #333;
 }
 
 html {
@@ -9,6 +23,8 @@ html {
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -17,4 +33,10 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+
+button,
+input {
+    border: none;
+    outline: none;
 }

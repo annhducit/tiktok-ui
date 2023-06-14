@@ -1,0 +1,52 @@
+.wrapper {
+    padding: 9px 16px;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    border-radius: 4px;
+    transition: 200ms ease-in-out 0s;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.content {
+    margin-left: 12px;
+}
+.name {
+    color: rgb(22, 24, 35);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: -2px;
+    max-width: 145px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.usename {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(22, 24, 35, 0.5);
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.icon {
+    margin-left: 8px;
+    font-size: 1.4rem;
+    color: rgb(32, 213, 236);
+}

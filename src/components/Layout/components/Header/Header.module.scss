@@ -1,0 +1,93 @@
+.wrapper {
+    height: var(--header-default-layout);
+    box-shadow: 0px 1px 1px rgba(0 0 0/12%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: var(--width-default-layout);
+}
+
+.search-block {
+    position: relative;
+    width: 500px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    border-radius: 92px;
+    padding-left: 16px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border: 1.5px solid transparent;
+
+    &:hover {
+        border: 1.5px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .search {
+        flex: 1;
+        height: 100%;
+        background-color: transparent;
+        caret-color: var(--primary-color);
+        font-weight: 400;
+        color: var(--primary-text);
+        font-size: 1.6rem;
+    }
+
+    .search:not(:placeholder-shown) ~ .search-button {
+        color: rgb(22, 24, 35);
+    }
+
+    .clear,
+    .loading {
+        position: absolute;
+        right: calc(var(--search-right) + 16px);
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(22, 24, 35, 0.34);
+    }
+
+    .search-button {
+        position: relative;
+        width: var(--search-right);
+        height: 100%;
+        font-size: 1.8rem;
+        padding: 11px 16px;
+        border-top-right-radius: 92px;
+        border-bottom-right-radius: 92px;
+        color: rgba(22, 24, 35, 0.34);
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: calc(var(--search-height) - 18px);
+            right: var(--search-right);
+            top: var(--search-top-spacer);
+            width: 1px;
+            background-color: rgba(22, 24, 35, 0.12);
+        }
+
+        &:hover {
+            background: rgba(22, 24, 35, 0.06);
+        }
+    }
+}
+
+.account {
+    color: rgba(22, 24, 35, 0.75);
+    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 5px 12px 3px;
+    line-height: 22px;
+}
+
+.search-result {
+    width: 500px;
+}

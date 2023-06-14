@@ -1,0 +1,14 @@
+.wrapper {
+    position: absolute;
+    width: 100%;
+    // margin-top: 4px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
+    border-radius: 8px;
+    padding-top: 8px;
+    box-sizing: border-box;
+    max-height: min((100vh - 96px) - 60px, 760px);
+    overflow: hidden auto;
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
