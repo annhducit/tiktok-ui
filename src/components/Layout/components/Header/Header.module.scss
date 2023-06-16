@@ -7,7 +7,7 @@
 }
 
 .inner {
-    padding: 0 16px;
+    padding: 0px 24px 0px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,4 +90,45 @@
 
 .search-result {
     width: 500px;
+}
+
+// .btn-upload {
+//     color: rgb(22, 24, 35);
+//     border: 1px solid rgba(22, 24, 35, 0.12);
+
+//     &:hover {
+//         background-color: rgba(22, 24, 35, 0.03);
+//         border: 1px solid rgba(22, 24, 35, 0.12);
+//     }
+// }
+
+.action {
+    display: flex;
+    align-items: center;
+
+    .btn_user-upload {
+        font-size: 2.2rem;
+        color: #161823;
+        background-color: transparent;
+        padding: 4px 12px;
+        cursor: pointer;
+        margin-left: 16px;
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-left: 16px;
+    }
+}
+
+.btn-more {
+    margin-left: 24px;
+    font-size: 2rem;
+    color: rgba(22, 24, 35, 0.8);
+    background-color: transparent;
+    padding: 4px 8px;
+    cursor: pointer;
 }
