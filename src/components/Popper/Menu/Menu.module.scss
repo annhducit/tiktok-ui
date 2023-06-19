@@ -18,7 +18,7 @@
     margin-top: -8px;
 
     &:hover {
-        background: rgba(22, 24, 35, 0.03);
+        background: rgba(22, 24, 35, 0.06);
     }
 }
 
@@ -28,10 +28,13 @@
 
 .menu-propper {
     padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 // header
 .header {
+    flex-shrink: 0;
     position: relative;
     height: 50px;
     margin-top: -8px;
@@ -51,4 +54,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.menu-body {
+    overflow-y: auto;
 }

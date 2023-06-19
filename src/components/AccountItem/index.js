@@ -1,23 +1,27 @@
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 import style from './AccountItem.module.scss';
-import image from '~/assets/images/avatar.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(style);
-function AccountItem() {
+function AccountItem({ data }) {
     return (
         <div className={cx('wrapper')}>
-            <img className={cx('image')} src={image} alt=""></img>
+            <img className={cx('image')} src={data.avatar} alt=""></img>
             <div className={cx('content')}>
                 <p className={cx('name')}>
-                    Beautiful Song
-                    <FontAwesomeIcon className={cx('icon')} icon={faCheckCircle} />
+                    <span>{data.full_name}</span>
+                    {data.tick && <FontAwesomeIcon className={cx('icon')} icon={faCheckCircle} />}
                 </p>
-                <span className={cx('usename')}>By Sia</span>
+                <span className={cx('usename')}>{data.nickname}</span>
             </div>
         </div>
     );
 }
+
+AccountItem.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default AccountItem;

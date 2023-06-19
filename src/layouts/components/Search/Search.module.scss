@@ -1,18 +1,13 @@
-.wrapper {
-    height: var(--header-default-layout);
-    box-shadow: 0px 1px 1px rgba(0 0 0/12%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.search-result {
+    width: 500px;
 }
 
-.inner {
-    padding: 0px 24px 0px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: var(--width-default-layout);
+.account {
+    color: rgba(22, 24, 35, 0.75);
+    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 5px 12px 3px;
+    line-height: 22px;
 }
 
 .search-block {
@@ -28,6 +23,7 @@
 
     &:hover {
         border: 1.5px solid rgba(0, 0, 0, 0.2);
+        background: rgba(22, 24, 35, 0.06);
     }
 
     .search {
@@ -38,10 +34,14 @@
         font-weight: 400;
         color: var(--primary-text);
         font-size: 1.6rem;
+        padding-right: 40px;
     }
 
     .search:not(:placeholder-shown) ~ .search-button {
         color: rgb(22, 24, 35);
+    }
+    .search:hover ~ .search-button {
+        background: rgba(22, 24, 35, 0.06);
     }
 
     .clear,
@@ -51,6 +51,19 @@
         top: 50%;
         transform: translateY(-50%);
         color: rgba(22, 24, 35, 0.34);
+    }
+    .loading {
+        transform: translateY(-50%);
+        animation: circleAround 1s linear infinite;
+    }
+
+    @keyframes circleAround {
+        from {
+            transform: translateY(-50%) rotate(0);
+        }
+        to {
+            transform: translateY(-50%) rotate(360deg);
+        }
     }
 
     .search-button {
@@ -80,55 +93,6 @@
     }
 }
 
-.account {
-    color: rgba(22, 24, 35, 0.75);
-    font-weight: 600;
-    font-size: 1.6rem;
-    padding: 5px 12px 3px;
-    line-height: 22px;
-}
-
-.search-result {
-    width: 500px;
-}
-
-// .btn-upload {
-//     color: rgb(22, 24, 35);
-//     border: 1px solid rgba(22, 24, 35, 0.12);
-
-//     &:hover {
-//         background-color: rgba(22, 24, 35, 0.03);
-//         border: 1px solid rgba(22, 24, 35, 0.12);
-//     }
-// }
-
-.action {
-    display: flex;
-    align-items: center;
-
-    .btn_user-upload {
-        font-size: 2.2rem;
-        color: #161823;
-        background-color: transparent;
-        padding: 4px 12px;
-        cursor: pointer;
-        margin-left: 16px;
-    }
-
-    .avatar {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        cursor: pointer;
-        margin-left: 16px;
-    }
-}
-
-.btn-more {
-    margin-left: 24px;
-    font-size: 2rem;
-    color: rgba(22, 24, 35, 0.8);
-    background-color: transparent;
-    padding: 4px 8px;
-    cursor: pointer;
+.wrapper {
+    width: 100%;
 }

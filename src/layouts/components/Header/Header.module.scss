@@ -1,0 +1,79 @@
+.wrapper {
+    height: var(--header-default-layout);
+    box-shadow: 0px 1px 1px rgba(0 0 0/12%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner {
+    padding: 0px 24px 0px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: var(--width-default-layout);
+}
+
+body .btn-upload {
+    margin-right: 16px;
+    color: rgb(22, 24, 35);
+    border: 1px solid rgba(22, 24, 35, 0.12);
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+        border: 1px solid rgba(22, 24, 35, 0.12);
+    }
+}
+
+// action
+.action {
+    display: flex;
+    align-items: center;
+
+    .current-user {
+        display: flex;
+        align-items: center;
+    }
+
+    .action-btn {
+        position: relative;
+        display: flex;
+        font-size: 2.2rem;
+        color: #161823;
+        background-color: transparent;
+        padding: 4px 10px;
+        cursor: pointer;
+    }
+
+    .badge {
+        position: absolute;
+        top: -3px;
+        right: 0px;
+        padding: 0px 6px;
+        height: 2rem;
+        line-height: 2rem;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--white-color);
+        background-color: var(--primary-color);
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-left: 16px;
+    }
+}
+
+.btn-more {
+    margin-left: 24px;
+    font-size: 2rem;
+    color: rgba(22, 24, 35, 0.8);
+    background-color: transparent;
+    padding: 4px 8px;
+    cursor: pointer;
+}

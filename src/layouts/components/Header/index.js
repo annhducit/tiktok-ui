@@ -1,35 +1,31 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import TippyHandless from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import { useEffect, useState } from 'react';
 import {
     faCircleQuestion,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
     faGear,
     faHeart,
     faKeyboard,
-    faMagnifyingGlass,
     faMoon,
     faPlus,
     faSignOut,
-    faSpinner,
     faUser,
-    faXmarkCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 import style from './Header.module.scss';
 import image from '~/assets/images';
 import avatar from '~/assets/images/avatar.jpeg';
-import AccountItem from '~/components/AccountItem';
-import { Wrapper as WrapperPopper } from '~/components/Popper';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Images';
+import { InboxIcon, MessageIcon } from '~/components/Icons';
+import Search from '../Search';
+import { Link } from 'react-router-dom';
+import config from '~/config';
 
 const cx = classNames.bind(style);
 
@@ -49,6 +45,101 @@ const list = [
                     type: 'language',
                     code: 'vi',
                     title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
                 },
             ],
         },
@@ -96,12 +187,7 @@ const listCurrentUser = [
 ];
 
 function Header() {
-    const [result, setResult] = useState([]);
     const currentId = true;
-
-    useEffect(() => {
-        setResult([]);
-    }, []);
 
     const handleSelect = (item) => {
         switch (item.type) {
@@ -115,34 +201,12 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img className={cx('logo-image')} src={image.logo} alt=""></img>
+                    <Link to={config.router.home}>
+                        <img className={cx('logo-image')} src={image.logo} alt=""></img>
+                    </Link>
                 </div>
-                <TippyHandless
-                    visible={result.length > 0}
-                    interactive
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <WrapperPopper>
-                                <p className={cx('account')}>Account</p>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </WrapperPopper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search-block')}>
-                        <input className={cx('search')} placeholder="Enter your keyword" />
-                        <button className={cx('clear')}>
-                            <FontAwesomeIcon icon={faXmarkCircle} />
-                        </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-                        <button className={cx('search-button')}>
-                            <FontAwesomeIcon className={cx('search-icon')} icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </TippyHandless>
+
+                <Search />
                 <div className={cx('action')}>
                     <Button outline className={cx('btn-upload')} leftIcon={<FontAwesomeIcon icon={faPlus} />}>
                         Upload
@@ -150,9 +214,14 @@ function Header() {
 
                     {currentId ? (
                         <div className={cx('current-user')}>
+                            <Tippy delay={[0, 200]} content="Message" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
                             <Tippy delay={[0, 200]} content="Upload" placement="bottom">
-                                <button className={cx('btn_user-upload')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </div>
